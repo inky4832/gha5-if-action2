@@ -15,7 +15,7 @@ jobs:
           echo Run Test  
   
   build: 
-    if: github.repository == 'inky4832/gha5-if-action' 
+    if: github.repository == 'inky4832/gha5-if-action2' 
     needs: test  
     runs-on: ubuntu-latest  
 
@@ -34,8 +34,9 @@ jobs:
       - name: Run Deploy1
         id: run_deploy1         
         run: |
-	   ls ${{toJson(github)}}
-	   echo Run Deploy1
+          ls ${{github}}
+          ls ${{toJson(github)}}
+          echo Run Deploy1
       - name: Run Deploy2 
         if: steps.run_deploy1.outcome == 'success'
         run: echo Run Deploy2

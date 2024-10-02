@@ -6,16 +6,13 @@ jobs:
   
   test:
     runs-on: ubuntu-latest  
-    
     steps:  
       - name: Run Test  
-        if: runner.os == 'Linux'
         run: |  
           ls ${{ github.workspace }}  
           echo Run Test  
   
   build: 
-    if: github.repository == 'inky4832/gha5-if-action' 
     needs: test  
     runs-on: ubuntu-latest  
 
