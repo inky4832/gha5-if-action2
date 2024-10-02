@@ -31,8 +31,6 @@ jobs:
       - name: Run Deploy1
         id: run_deploy1         
         run: |
-          #ls ${{github}}
-          #ls ${{toJson(github)}}
           echo Run Deploy1
       - name: Run Deploy2 
         if: steps.run_deploy1.outcome == 'success'
