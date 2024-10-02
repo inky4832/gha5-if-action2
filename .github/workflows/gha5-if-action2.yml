@@ -35,5 +35,5 @@ jobs:
           echo "${{ toJSON(github) }}"
           echo Run Deploy1
       - name: Run Deploy2 
-        if: steps.run_deploy1.outcome == 'failure'
+        if: failure() && steps.run_deploy1.outcome == 'failure'
         run: echo Run Deploy2
