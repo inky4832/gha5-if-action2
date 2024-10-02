@@ -31,7 +31,6 @@ jobs:
       - name: Run Deploy1
         id: run_deploy1         
         run: |
-          echo ${{ github }}
           echo ${{ toJSON(github) }}
           echo Run Deploy1
       - name: Run Deploy2 
