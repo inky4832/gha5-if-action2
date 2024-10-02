@@ -6,16 +6,13 @@ jobs:
   
   test:
     runs-on: ubuntu-latest  
-    
     steps:  
       - name: Run Test  
-        if: runner.os == 'Linux'
         run: |  
           ls ${{ github.workspace }}  
           echo Run Test  
   
   build: 
-    if: github.repository == 'inky4832/gha5-if-action2' 
     needs: test  
     runs-on: ubuntu-latest  
 
@@ -34,8 +31,7 @@ jobs:
       - name: Run Deploy1
         id: run_deploy1         
         run: |
-          ls ${{github}}
-          ls ${{toJson(github)}}
+          echo ${{ toJSON(github) }}
           echo Run Deploy1
       - name: Run Deploy2 
         if: steps.run_deploy1.outcome == 'success'
